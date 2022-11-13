@@ -27,25 +27,11 @@ def login(driver, email, password):
     #Кнопка Войти в аккаунт
     driver.find_element(By.XPATH, "//button[contains(text(),'Войти в аккаунт')]").click()
     #Ввод email
-    driver.find_element(By.XPATH, "//body/div[@id='root']/div[1]/main[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/input[1]").send_keys(email)
+    driver.find_element(By.XPATH, "//input[@type='text']").send_keys(email)
     #Ввод password
-    driver.find_element(By.XPATH, "//body/div[@id='root']/div[1]/main[1]/div[1]/form[1]/fieldset[2]/div[1]/div[1]/input[1]").send_keys(password)
+    driver.find_element(By.XPATH, "//input[@type='password']").send_keys(password)
     #Кнопка Войти
     driver.find_element(By.XPATH, "//button[contains(text(),'Войти')]").click()
-    yield driver
-    return driver
-
-@pytest.fixture
-def login_test(driver, email, password):
-    yield driver
-    #Вводим email
-    driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/main[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/input[1]").send_keys(email)
-    #Вводим password
-    driver.find_element(By.XPATH,"//body/div[@id='root']/div[1]/main[1]/div[1]/form[1]/fieldset[2]/div[1]/div[1]/input[1]").send_keys(password)
-    #Клик по кнопке Войти
-    driver.find_element(By.XPATH, "//button[contains(text(),'Войти')]").click()
-    #Кнопка Оформить заказ
-    WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[contains(text(),'Оформить заказ')]")))
     return driver
 
 @pytest.fixture

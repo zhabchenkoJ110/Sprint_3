@@ -11,6 +11,7 @@ class TestFromAccountToConstructor:
         login.find_element(By.XPATH, "//p[contains(text(),'Конструктор')]").click()
         #Явное ожидание поке элемент не станет видимым «Соберите бургер»
         WebDriverWait(login, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1[contains(text(),'Соберите бургер')]")))
+        assert login.find_element(By.XPATH, "//h1[contains(text(),'Соберите бургер')]").text == 'Соберите бургер'
 
     def test_click_to_logo(self, login):
         #Кнопка Личный Кабинет
@@ -19,3 +20,4 @@ class TestFromAccountToConstructor:
         login.find_element(By.XPATH, "//header/nav[1]/div[1]/a[1]/*[1]").click()
         #Явное ожидание поке элемент не станет видимым «Соберите бургер»
         WebDriverWait(login, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1[contains(text(),'Соберите бургер')]")))
+        assert login.find_element(By.XPATH, "//h1[contains(text(),'Соберите бургер')]").text == 'Соберите бургер'
