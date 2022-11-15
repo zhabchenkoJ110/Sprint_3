@@ -28,6 +28,7 @@ class TestLogin:
         # Клик по кнопке Войти
         driver.find_element(By.XPATH, "//button[contains(text(),'Войти')]").click()
         # Кнопка Оформить заказ
+        # вот я использую ожидание
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, "//button[contains(text(),'Оформить заказ')]")))
         assert driver.find_element(By.XPATH, "//button[contains(text(),'Оформить заказ')]").text == "Оформить заказ"
@@ -46,6 +47,7 @@ class TestLogin:
         # Клик по кнопке Войти
         driver.find_element(By.XPATH, "//button[contains(text(),'Войти')]").click()
         # Кнопка Оформить заказ
+        # вот я использую ожидание
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, "//button[contains(text(),'Оформить заказ')]")))
         assert driver.find_element(By.XPATH, "//button[contains(text(),'Оформить заказ')]").text == "Оформить заказ"
@@ -64,6 +66,7 @@ class TestLogin:
         # Клик по кнопке Войти
         driver.find_element(By.XPATH, "//button[contains(text(),'Войти')]").click()
         # Кнопка Оформить заказ
+        # вот я использую ожидание
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
             (By.XPATH, "//button[contains(text(),'Оформить заказ')]")))
         assert driver.find_element(By.XPATH, "//button[contains(text(),'Оформить заказ')]").text == "Оформить заказ"
